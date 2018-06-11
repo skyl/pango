@@ -5,6 +5,7 @@ import (
 )
 
 func TestReverse(t *testing.T) {
+  // panic("wat!")
   cases := []struct {
     in, want string
   }{

@@ -1,4 +1,3 @@
-
 package main
 
 import (
@@ -8,6 +7,7 @@ import (
 )
 
 func main() {
-	mathutil.PrintMultiplesOf(5, 10, 100)
+	multiples := mathutil.MultiplesOf(5, 10, 100)
+	fmt.Println(multiples)
 	fmt.Printf(stringutil.Reverse("\n???Hello, world.!!!"))
 }
