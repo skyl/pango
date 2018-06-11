@@ -16,6 +16,6 @@ go_test(
 go_library(
     name = "go_default_library",
     srcs = ["reverse.go"],
-    importpath = "pango/src/lib/stringutil",
+    importpath = "pango/src/pango/lib/stringutil",
     visibility = ["//visibility:public"],
 )
