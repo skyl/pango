@@ -1,12 +1,5 @@
 load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
 
-go_library(
-    name = "stringutil",
-    srcs = ["reverse.go"],
-    importpath = "lib/stringutil",
-    visibility = ["//visibility:public"],
-)
-
 go_test(
     name = "go_default_test",
     srcs = ["reverse_test.go"],
@@ -16,6 +9,6 @@ go_test(
 go_library(
     name = "go_default_library",
     srcs = ["reverse.go"],
-    importpath = "pango/src/pango/lib/stringutil",
+    importpath = "pango/lib/stringutil",
     visibility = ["//visibility:public"],
 )

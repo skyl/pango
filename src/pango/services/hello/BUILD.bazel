@@ -3,9 +3,13 @@ load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
 go_library(
     name = "go_default_library",
     srcs = ["hello.go"],
-    importpath = "pango/src/pango/services/hello",
+    importpath = "pango/services/hello",
     visibility = ["//visibility:private"],
-    deps = ["//src/pango/lib/stringutil"],
+    deps = [
+        # deps are bazel paths not go import paths ...
+        "//src/pango/lib/mathutil:go_default_library",
+        "//src/pango/lib/stringutil:go_default_library",
+    ],
 )
 
 go_binary(
