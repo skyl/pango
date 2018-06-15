@@ -1,2 +1,11 @@
 bin/
+pkg/
 bazel-*
+# TBD - instead of checking in vendor deps, we want to use a lockfile.
+# But, goagen doesn't play nice with a lockfile. Therefore ...
+# If a dev needs this tool they can run
+# go get -u github.com/goadesign/goa/...
+# in their workspace ... hrm ...
+src/github.com
+src/golang.org
+src/gopkg.in

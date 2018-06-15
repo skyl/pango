@@ -17,21 +17,3 @@ go_binary(
     embed = [":go_default_library"],
     visibility = ["//visibility:public"],
 )
-
-
-# First we load the go_image and container_push rules
-# load("@io_bazel_rules_docker//go:image.bzl", "go_image")
-#
-# go_image(
-#     name = "image",
-#     srcs = ["hello.go"],
-#     # importpath = "github.com/your/path/here",
-#     # goarch = "amd64",
-#     # goos = "linux",
-#     # pure = "on",
-# )
-
-# go_image(
-#     name = "docker",
-#     binary = ":hello",
-# )
