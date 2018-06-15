@@ -9,13 +9,17 @@ Assuming you have the following installed:
 # Test
 
 ```
-bazel test //src/pango/...
+# TODO: the vendor directory messes this up a little bit
+bazel test //src/pango/lib/...
+bazel test //src/pango/services/...
 ```
 
 # Build
 
 ```
-bazel build //src/pango/...
+# TODO: the vendor directory messes this up a little bit
+bazel build //src/pango/lib/...
+bazel build //src/pango/services/...
 ```
 
 # Run Hello World
@@ -40,7 +44,22 @@ we need to figure out how this works for binary dev tools such as goagen.
 For now, use `go get` as described here: https://goa.design/learn/guide/
 . Then, check in the goa artifacts.
 
-# Updating the Bazel build files
+# Installing new (Go) dependencies
+
+All 3rd party deps are managed with `dep`.
+
+```
+cd src/pango
+dep ensure -add foo/bar
+```
+
+These are then translated to Bazel with Gazelle:
+
+```
+bazel run //:gazelle
+```
+
+# Updating the Bazel build files for Go packages
 
 When you add a service or dependency to the monorepo, you need to create
 build files so that Bazel will know how to build yourthing and what will
