@@ -11,7 +11,7 @@ go_library(
     importpath = "pango/services/cellar/client",
     visibility = ["//visibility:public"],
     deps = [
-        "//src/github.com/goadesign/goa:go_default_library",
-        "//src/github.com/goadesign/goa/client:go_default_library",
+        "//src/pango/vendor/github.com/goadesign/goa:go_default_library",
+        "//src/pango/vendor/github.com/goadesign/goa/client:go_default_library",
     ],
 )

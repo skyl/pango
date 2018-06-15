@@ -3,6 +3,7 @@
 Assuming you have the following installed:
 
 * Bazel
+* dep (TODO: wrap with Bazel)
 <!-- * Go -->
 
 # Test

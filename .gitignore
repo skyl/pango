@@ -1,6 +1,7 @@
 bin/
 pkg/
 bazel-*
+src/pango/vendor/
 # TBD - instead of checking in vendor deps, we want to use a lockfile.
 # But, goagen doesn't play nice with a lockfile. Therefore ...
 # If a dev needs this tool they can run

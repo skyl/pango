@@ -6,10 +6,10 @@ go_library(
     importpath = "pango/services/cellar/tool/cellar-cli",
     visibility = ["//visibility:private"],
     deps = [
-        "//src/github.com/goadesign/goa/client:go_default_library",
-        "//src/github.com/spf13/cobra:go_default_library",
         "//src/pango/services/cellar/client:go_default_library",
         "//src/pango/services/cellar/tool/cli:go_default_library",
+        "//src/pango/vendor/github.com/goadesign/goa/client:go_default_library",
+        "//src/pango/vendor/github.com/spf13/cobra:go_default_library",
     ],
 )
 

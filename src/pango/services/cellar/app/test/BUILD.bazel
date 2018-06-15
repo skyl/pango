@@ -6,8 +6,8 @@ go_library(
     importpath = "pango/services/cellar/app/test",
     visibility = ["//visibility:public"],
     deps = [
-        "//src/github.com/goadesign/goa:go_default_library",
-        "//src/github.com/goadesign/goa/goatest:go_default_library",
         "//src/pango/services/cellar/app:go_default_library",
+        "//src/pango/vendor/github.com/goadesign/goa:go_default_library",
+        "//src/pango/vendor/github.com/goadesign/goa/goatest:go_default_library",
     ],
 )
