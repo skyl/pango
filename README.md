@@ -40,3 +40,12 @@ For now, use `go get` as described here: https://goa.design/learn/guide/
 . Then, check in the goa artifacts.
 
 # Updating the Bazel build files
+
+When you add a service or dependency to the monorepo, you need to create
+build files so that Bazel will know how to build yourthing and what will
+need to be rebuilt when yourthing changes. Luckily this can be automated
+with Gazelle:
+
+```
+bazel run //:gazelle
+```
