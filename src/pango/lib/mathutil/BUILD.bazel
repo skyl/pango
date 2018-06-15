@@ -12,8 +12,8 @@ go_test(
     srcs = ["multiples_test.go"],
     embed = [":go_default_library"],
     deps = [
-      # TODO: remove dependency and use reflect.DeepEqual
-      # https://stackoverflow.com/a/15312182
-      "//src/pango/lib/sliceutil:go_default_library"
-    ]
+        # TODO: remove dependency and use reflect.DeepEqual
+        # https://stackoverflow.com/a/15312182
+        "//src/pango/lib/sliceutil:go_default_library",
+    ],
 )

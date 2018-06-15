@@ -1,0 +1,13 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "go_default_library",
+    srcs = ["bottle_testing.go"],
+    importpath = "pango/services/cellar/app/test",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//src/github.com/goadesign/goa:go_default_library",
+        "//src/github.com/goadesign/goa/goatest:go_default_library",
+        "//src/pango/services/cellar/app:go_default_library",
+    ],
+)

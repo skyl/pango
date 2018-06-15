@@ -5,6 +5,11 @@ go_library(
     srcs = glob(["**/*.go"]),
     importpath = "pango/services/cellar",
     visibility = ["//visibility:private"],
+    deps = [
+        "//src/github.com/goadesign/goa:go_default_library",
+        "//src/github.com/goadesign/goa/middleware:go_default_library",
+        "//src/pango/services/cellar/app:go_default_library",
+    ],
 )
 
 go_binary(

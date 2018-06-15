@@ -1,0 +1,12 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "go_default_library",
+    srcs = ["design.go"],
+    importpath = "pango/services/cellar/design",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//src/github.com/goadesign/goa/design:go_default_library",
+        "//src/github.com/goadesign/goa/design/apidsl:go_default_library",
+    ],
+)

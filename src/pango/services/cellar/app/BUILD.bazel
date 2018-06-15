@@ -1,0 +1,15 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "go_default_library",
+    srcs = [
+        "contexts.go",
+        "controllers.go",
+        "hrefs.go",
+        "media_types.go",
+        "user_types.go",
+    ],
+    importpath = "pango/services/cellar/app",
+    visibility = ["//visibility:public"],
+    deps = ["//src/github.com/goadesign/goa:go_default_library"],
+)

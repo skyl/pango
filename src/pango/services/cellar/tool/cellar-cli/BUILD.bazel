@@ -1,0 +1,20 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_library(
+    name = "go_default_library",
+    srcs = ["main.go"],
+    importpath = "pango/services/cellar/tool/cellar-cli",
+    visibility = ["//visibility:private"],
+    deps = [
+        "//src/github.com/goadesign/goa/client:go_default_library",
+        "//src/github.com/spf13/cobra:go_default_library",
+        "//src/pango/services/cellar/client:go_default_library",
+        "//src/pango/services/cellar/tool/cli:go_default_library",
+    ],
+)
+
+go_binary(
+    name = "cellar-cli",
+    embed = [":go_default_library"],
+    visibility = ["//visibility:public"],
+)
