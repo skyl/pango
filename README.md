@@ -1,6 +1,6 @@
 # Prerequisites
 
-Assuming you have the following installed:
+You must first install the following:
 
 * Bazel
 * dep (TODO: wrap with Bazel)
