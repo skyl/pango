@@ -4,7 +4,70 @@ Assuming you have the following installed:
 
 * Bazel
 * dep (TODO: wrap with Bazel)
-<!-- * Go -->
+
+## Install Bazel
+
+On a Mac:
+
+```
+brew install bazel
+```
+
+On a fresh install of Ubuntu 18.04 this might look like:
+
+```
+sudo apt update
+sudo apt upgrade
+sudo apt-get install pkg-config zip g++ zlib1g-dev unzip python
+curl -L https://github.com/bazelbuild/bazel/releases/download/0.14.1/bazel-0.14.1-installer-linux-x86_64.sh > bazel-installer.sh
+chmod +x bazel-installer.sh
+./bazel-installer.sh --user
+echo "export PATH=$HOME/bin:\$PATH" >> ~/.bashrc
+```
+
+## Install dep
+
+On a Mac:
+
+```
+brew install dep
+```
+
+On Ubuntu:
+
+```
+sudo apt install go-dep
+```
+
+# Clone, Install dependencies and Bazel BUILD files
+
+Clone this repository:
+
+```
+git clone https://github.com/skyl/pango
+cd pango
+```
+
+Set your GOPATH to the root of this repository:
+
+```
+export GOPATH=`pwd`
+```
+
+Install 3rd party dependencies with dep:
+
+```
+# TODO wrap this up completely within Bazel?
+cd src/pango
+dep ensure
+cd ../..
+```
+
+Use Gazelle to add Bazel build files in the vendor directory:
+
+```
+bazel run //:gazelle
+```
 
 # Test
 
