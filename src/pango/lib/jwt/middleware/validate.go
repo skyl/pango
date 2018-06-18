@@ -12,8 +12,6 @@ import (
 )
 
 func ValidateToken(w http.ResponseWriter, r *http.Request, next http.HandlerFunc) {
-	// validate token
-	fmt.Println(keys.GetVerifyKey())
 	token, err := jwt.ParseFromRequest(r, func(token *jwt.Token) (interface{}, error) {
 		return keys.GetVerifyKey(), nil
 	})

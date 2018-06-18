@@ -7,10 +7,9 @@ import (
 	"errors"
 	"strings"
 	"net/http"
-	// "io/ioutil"
 	"encoding/json"
+
 	"github.com/dgrijalva/jwt-go"
-	// "github.com/gobuffalo/packr"
 
 	"pango/lib/web/response"
 	"pango/lib/jwt/keys"
