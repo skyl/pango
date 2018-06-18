@@ -1,0 +1,19 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_library(
+    name = "go_default_library",
+    srcs = ["main.go"],
+    importpath = "pango/services/aresource",
+    visibility = ["//visibility:private"],
+    deps = [
+        "//src/pango/lib/jwt/middleware:go_default_library",
+        "//src/pango/lib/web/response:go_default_library",
+        "//src/pango/vendor/github.com/codegangsta/negroni:go_default_library",
+    ],
+)
+
+go_binary(
+    name = "aresource",
+    embed = [":go_default_library"],
+    visibility = ["//visibility:public"],
+)

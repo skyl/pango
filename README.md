@@ -97,6 +97,18 @@ bazel run //src/pango/services/hello
 bazel run //src/pango/services/cellar
 ```
 
+# Run the JWT token authorization service
+
+```
+bazel run //src/pango/services/auth
+```
+
+# Run a resource that requires the auth bearer token
+
+```
+bazel run //src/pango/services/aresource
+```
+
 # Work with `goagen`
 
 We haven't quite figured out how we are going to handle dependencies,
@@ -114,6 +126,8 @@ All 3rd party deps are managed with `dep`.
 ```
 cd src/pango
 dep ensure -add foo/bar
+# or, if already imported, just:
+dep ensure
 ```
 
 These are then translated to Bazel with Gazelle:

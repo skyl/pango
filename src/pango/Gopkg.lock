@@ -8,6 +8,18 @@
   revision = "783273d703149aaeb9897cf58613d5af48861c25"
 
 [[projects]]
+  name = "github.com/codegangsta/negroni"
+  packages = ["."]
+  revision = "5dbbc83f748fc3ad38585842b0aedab546d0ea1e"
+  version = "v0.3.0"
+
+[[projects]]
+  name = "github.com/dgrijalva/jwt-go"
+  packages = ["."]
+  revision = "268038b363c7a8d7306b8e35bf77a1fde4b0c402"
+  version = "v2.7.0"
+
+[[projects]]
   branch = "master"
   name = "github.com/dimfeld/httppath"
   packages = ["."]
@@ -183,6 +195,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "a29c2dafd26868b0eca2ba01461831077c697cebae9ccf672538fbf2915625d4"
+  inputs-digest = "e6ab5fa8e73651315fa48d88d8498fe671751722dbfb83b101cae2328ef9419b"
   solver-name = "gps-cdcl"
   solver-version = 1
