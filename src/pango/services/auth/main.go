@@ -52,7 +52,8 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 	}
 	// TODO: https://github.com/dgrijalva/jwt-go/blob/master/MIGRATION_GUIDE.md
 	// token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
-	token := jwt.New(jwt.GetSigningMethod("RS256"))
+	// wat? https://github.com/dgrijalva/jwt-go/issues/25
+	token := jwt.New(jwt.GetSigningMethod("HS256"))
 	token.Claims["iss"] = "admin"
 	token.Claims["exp"] = time.Now().Add(time.Minute * 20).Unix()
 	token.Claims["CustomUserInfo"] = struct {
@@ -64,6 +65,7 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusInternalServerError)
 		fmt.Fprintln(w, "Error while signing the token")
 		log.Printf("Error signing token: %v\n", err)
+		return
 	}
 	// create a token instance using the token string
 	resp := Token{tokenString}
